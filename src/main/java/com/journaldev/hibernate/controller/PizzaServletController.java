@@ -28,7 +28,7 @@ import jakarta.persistence.Persistence;*/
 /**
  * Servlet implementation class GetOrSavePizzaByUserId
  */
-@WebServlet("/PizzaServletController")
+@WebServlet("/PizzaServletController2")
 public class PizzaServletController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
