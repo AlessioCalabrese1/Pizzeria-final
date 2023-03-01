@@ -16,7 +16,7 @@
 </style>
 </head>
 <body>
-	<form action="http://localhost:8080/PIZZERIA/UserServletController" method="get">
+	<form action="http://localhost:8080/PIZZERIA_FINAL/UserServletController2" method="get">
 		<% 
 		if(request.getAttribute("error") != null){ %>
 			<p><%= request.getAttribute("error") %></p>

@@ -20,7 +20,7 @@ import jakarta.persistence.Persistence;*/
 /**
  * Servlet implementation class UserServletController
  */
-@WebServlet("/UserServletController")
+@WebServlet("/UserServletController2")
 public class UserServletController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

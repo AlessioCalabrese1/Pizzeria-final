@@ -28,7 +28,7 @@ import jakarta.persistence.Persistence;*/
 /**
  * Servlet implementation class UpdateAndDeletePizzaServletContorller
  */
-@WebServlet("/UpdateAndDeletePizzaServletController")
+@WebServlet("/UpdateAndDeletePizzaServletController2")
 public class UpdateAndDeletePizzaServletController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -58,7 +58,7 @@ public class UpdateAndDeletePizzaServletController extends HttpServlet {
 		
 		System.out.println("DAJE ROMAAAA");
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence_pizzeria");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencePizzeria");
 		EntityManager entityManager = emf.createEntityManager();
 		entityManager.getTransaction().begin();
 		
