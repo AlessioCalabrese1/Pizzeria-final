@@ -45,6 +45,7 @@ public class UpdateAndDeletePizzaServletController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PizzaCRUD pizzaCRUD = new PizzaCRUD();
+		System.out.println("Sono prima della delete: " + request.getParameter("pizzaId"));
 		pizzaCRUD.deletePizza(Integer.parseInt(request.getParameter("pizzaId")));
 		
 		request.setAttribute("userId", Integer.parseInt(request.getParameter("userId")));
@@ -58,7 +59,7 @@ public class UpdateAndDeletePizzaServletController extends HttpServlet {
 		
 		System.out.println("DAJE ROMAAAA");
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence_pizzeria");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencePizzeria");
 		EntityManager entityManager = emf.createEntityManager();
 		entityManager.getTransaction().begin();
 		

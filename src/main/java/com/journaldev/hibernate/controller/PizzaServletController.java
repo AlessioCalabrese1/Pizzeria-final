@@ -46,7 +46,7 @@ public class PizzaServletController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PizzaCRUD pizzaCRUD = new PizzaCRUD();
-		
+		System.out.println(request.getParameter("pizzaId"));
 		Pizza oldPizza = pizzaCRUD.findPizzaById(Integer.parseInt(request.getParameter("pizzaId")));
 		
 		request.setAttribute("pizzaId", oldPizza.getId());

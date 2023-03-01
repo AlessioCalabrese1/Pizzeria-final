@@ -1,12 +1,8 @@
 <%@page import="javax.persistence.EntityManager"%>
 <%@page import="javax.persistence.Persistence"%>
 <%@page import="javax.persistence.EntityManagerFactory"%>
-<%@page import="org.hibernate.query.Query"%>
 <%@page import="com.journaldev.hibernate.model.Pizza"%>
 <%@page import="com.journaldev.hibernate.model.User"%>
-<%@page import="org.hibernate.Transaction"%>
-<%@page import="org.hibernate.Session"%>
-<%@page import="org.hibernate.SessionFactory"%>
 <%@page import="java.util.List"%>
 <%@page import="com.journaldev.hibernate.model.Dough"%>
 <%@page import="com.journaldev.hibernate.model.Ingredient"%>

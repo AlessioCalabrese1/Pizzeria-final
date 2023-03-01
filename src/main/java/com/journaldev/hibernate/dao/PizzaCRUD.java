@@ -11,12 +11,13 @@ import javax.persistence.Persistence;
 import com.journaldev.hibernate.model.Pizza;
 
 public class PizzaCRUD {
+	
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencePizzeria");
+	EntityManager entityManager = emf.createEntityManager();
 
 	public Pizza findPizzaById(int id) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencePizzeria");
-		EntityManager entityManager = emf.createEntityManager();
 		entityManager.getTransaction().begin();
-
+		
 		Pizza oldPizza = entityManager.find(Pizza.class, id);
 
 		entityManager.getTransaction().commit();
@@ -26,8 +27,6 @@ public class PizzaCRUD {
 	}
 
 	public void insertNewPizza(Pizza newPizza) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencePizzeria");
-		EntityManager entityManager = emf.createEntityManager();
 		entityManager.getTransaction().begin();
 
 		entityManager.persist(newPizza);
@@ -36,9 +35,6 @@ public class PizzaCRUD {
 	}
 
 	public void deletePizza(int pizzaId) {
-
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencePizzeria");
-		EntityManager entityManager = emf.createEntityManager();
 		entityManager.getTransaction().begin();
 
 		Pizza pizza = entityManager.find(Pizza.class, pizzaId);
@@ -50,9 +46,6 @@ public class PizzaCRUD {
 	}
 
 	public void updatePizza(Pizza updatedPizza, int pizzaId) {
-
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencePizzeria");
-		EntityManager entityManager = emf.createEntityManager();
 		entityManager.getTransaction().begin();
 
 		Pizza oldPizza = entityManager.find(Pizza.class, pizzaId);
