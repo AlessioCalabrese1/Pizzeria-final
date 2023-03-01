@@ -10,7 +10,8 @@
 		<class>com.journaldev.hibernate.model.Pizza</class>
 		<class>com.journaldev.hibernate.model.User</class>
 		<class>com.journaldev.hibernate.model.Ingredient</class>
-
+	
+		
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
