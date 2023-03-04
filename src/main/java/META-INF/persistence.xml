@@ -5,7 +5,7 @@
 	version="2.1">
 	<persistence-unit name="persistencePizzeria">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<non-jta-data-source>java:comp/env/jdbc/MyDB</non-jta-data-source>
+		<non-jta-data-source>java:comp/env/jdbc/MyLocalDB</non-jta-data-source>
 
 		<class>com.journaldev.hibernate.model.Dough</class>
 		<class>com.journaldev.hibernate.model.Pizza</class>

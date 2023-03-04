@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<form action="http://localhost:8080/PIZZERIA/UpdateAndDeletePizzaServletController" method="post">
+<form action="http://localhost:8080/PIZZERIA_FINAL/UpdateAndDeletePizzaServletController2" method="post">
 <!-- Tabella per selezionare l'impasto -->
 		<p>Check the dough you want!</p>
 		<table>

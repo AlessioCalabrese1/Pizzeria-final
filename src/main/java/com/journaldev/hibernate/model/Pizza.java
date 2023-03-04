@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,47 +13,42 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-
-/*import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;*/
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "PIZZA")
+@NamedQuery(name = "selectAllPizza", query = "SELECT p FROM Pizza p")
+@XmlRootElement(name = "pizza")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Pizza {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pizza_id")
 	private int id;
-	
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "dough_id", nullable = false)
 	private Dough dough;
-	
-	@ManyToMany(targetEntity = Ingredient.class, cascade = CascadeType.DETACH)
-	@JoinTable(name = "PIZZA_INGREDIENT",
-				joinColumns = @JoinColumn(name = "pizza_id"),
-				inverseJoinColumns = @JoinColumn(name = "ingredient_id")  )
+
+	@ManyToMany(targetEntity = Ingredient.class, cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+	@JoinTable(name = "PIZZA_INGREDIENT", joinColumns = @JoinColumn(name = "pizza_id"), inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
 	private Set<Ingredient> ingredients;
-	
-	public Pizza() {}
+
+	public Pizza() {
+	}
+
 	public Pizza(String _name, User _user, Dough dough, Set<Ingredient> _ingredients) {
 		setName(_name);
 		setUser(_user);
@@ -99,10 +95,10 @@ public class Pizza {
 	public void setIngredients(Set<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 	}
-	
+
 	@Override
 	public String toString() {
 		return getName();
 	}
-	
+
 }

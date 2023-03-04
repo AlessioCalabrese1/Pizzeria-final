@@ -28,7 +28,7 @@
 </style>
 </head>
 <body>
-	<form action="http://localhost:8080/PIZZERIA/PizzaServletController" method="post">
+	<form action="http://localhost:8080/PIZZERIA_FINAL/PizzaServletController2" method="post">
 		
 		<!-- Tabella per selezionare l'impasto -->
 		<p>Check the dough you want!</p>
@@ -110,12 +110,12 @@
 					</ul>
 				</td>
 				<td>
-					<form action="http://localhost:8080/PIZZERIA/PizzaServletController" method="get">
+					<form action="http://localhost:8080/PIZZERIA_FINAL/PizzaServletController2" method="get">
 						<input type="text" name="pizzaId" value="<%= pizza.getId() %>" style="display: none;">
 						<input type="submit" value="Update">
 					</form>
 					
-					<form action="http://localhost:8080/PIZZERIA/UpdateAndDeletePizzaServletController" method="get">
+					<form action="http://localhost:8080/PIZZERIA_FINAL/UpdateAndDeletePizzaServletController2" method="get">
 						<input type="text" name="pizzaId" value="<%= pizza.getId() %>" style="display: none;">
 						<input type="text" name="userId" value="<%= user.getId() %>" style="display: none;">
 						<input type="submit" value="Delete">

@@ -24,19 +24,21 @@ import jakarta.persistence.Table;*/
 @Table(name = "DOUGH")
 @NamedQuery(name = "selectAllDough", query = "SELECT d FROM Dough d")
 public class Dough {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "dough_id")
 	private int id;
-	
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@OneToMany(mappedBy = "dough")
 	private List<Pizza> pizzas;
-	
-	public Dough() {}
+
+	public Dough() {
+	}
+
 	public Dough(String _name) {
 		setName(_name);
 	}
@@ -56,7 +58,15 @@ public class Dough {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+	public List<Pizza> getPizzas() {
+		return pizzas;
+	}
+
+	public void setPizzas(List<Pizza> pizzas) {
+		this.pizzas = pizzas;
+	}
+
 	@Override
 	public String toString() {
 		return getId() + " - " + getName();
